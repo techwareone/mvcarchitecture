@@ -3,27 +3,23 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Data.Infrastructure
 {
     public abstract class RepositoryBase<T> where T : class
     {
         #region Properties
-        private StoreEntities dataContext;
-        private readonly IDbSet<T> dbSet;
 
-        protected IDbFactory DbFactory
-        {
-            get;
-            private set;
-        }
+        private readonly IDbSet<T> dbSet;
+        private StoreEntities dataContext;
+
+        protected IDbFactory DbFactory { get; private set; }
 
         protected StoreEntities DbContext
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
         }
+
         #endregion
 
         protected RepositoryBase(IDbFactory dbFactory)
@@ -33,6 +29,7 @@ namespace Store.Data.Infrastructure
         }
 
         #region Implementation
+
         public virtual void Add(T entity)
         {
             dbSet.Add(entity);
@@ -51,7 +48,7 @@ namespace Store.Data.Infrastructure
 
         public virtual void Delete(Expression<Func<T, bool>> where)
         {
-            IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
+            IEnumerable<T> objects = dbSet.Where(where).AsEnumerable();
             foreach (T obj in objects)
                 dbSet.Remove(obj);
         }
@@ -73,10 +70,9 @@ namespace Store.Data.Infrastructure
 
         public T Get(Expression<Func<T, bool>> where)
         {
-            return dbSet.Where(where).FirstOrDefault<T>();
+            return dbSet.Where(where).FirstOrDefault();
         }
 
         #endregion
-    
     }
 }

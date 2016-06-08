@@ -1,11 +1,8 @@
-﻿using Store.Data.Infrastructure;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Store.Data.Infrastructure;
 using Store.Data.Repositories;
 using Store.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Service
 {
@@ -21,11 +18,12 @@ namespace Store.Service
 
     public class GadgetService : IGadgetService
     {
-        private readonly IGadgetRepository gadgetsRepository;
         private readonly ICategoryRepository categoryRepository;
+        private readonly IGadgetRepository gadgetsRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public GadgetService(IGadgetRepository gadgetsRepository, ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
+        public GadgetService(IGadgetRepository gadgetsRepository, ICategoryRepository categoryRepository,
+            IUnitOfWork unitOfWork)
         {
             this.gadgetsRepository = gadgetsRepository;
             this.categoryRepository = categoryRepository;
@@ -36,19 +34,19 @@ namespace Store.Service
 
         public IEnumerable<Gadget> GetGadgets()
         {
-            var gadgets = gadgetsRepository.GetAll();
+            IEnumerable<Gadget> gadgets = gadgetsRepository.GetAll();
             return gadgets;
         }
 
         public IEnumerable<Gadget> GetCategoryGadgets(string categoryName, string gadgetName = null)
         {
-            var category = categoryRepository.GetCategoryByName(categoryName);
+            Category category = categoryRepository.GetCategoryByName(categoryName);
             return category.Gadgets.Where(g => g.Name.ToLower().Contains(gadgetName.ToLower().Trim()));
         }
 
         public Gadget GetGadget(int id)
         {
-            var gadget = gadgetsRepository.GetById(id);
+            Gadget gadget = gadgetsRepository.GetById(id);
             return gadget;
         }
 
@@ -63,6 +61,5 @@ namespace Store.Service
         }
 
         #endregion
-    
     }
 }

@@ -1,21 +1,20 @@
-﻿using Store.Data.Infrastructure;
-using Store.Model;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Store.Data.Infrastructure;
+using Store.Model;
 
 namespace Store.Data.Repositories
 {
     public class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
     {
         public CategoryRepository(IDbFactory dbFactory)
-            : base(dbFactory) { }
+            : base(dbFactory)
+        {
+        }
 
         public Category GetCategoryByName(string categoryName)
         {
-            var category = this.DbContext.Categories.Where(c => c.Name == categoryName).FirstOrDefault();
+            Category category = DbContext.Categories.Where(c => c.Name == categoryName).FirstOrDefault();
 
             return category;
         }

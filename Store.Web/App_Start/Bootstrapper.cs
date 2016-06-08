@@ -1,15 +1,11 @@
-﻿using Autofac;
+﻿using System.Reflection;
+using System.Web.Mvc;
+using Autofac;
 using Autofac.Integration.Mvc;
 using Store.Data.Infrastructure;
 using Store.Data.Repositories;
 using Store.Service;
 using Store.Web.Mappings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using System.Web.Mvc;
 
 namespace Store.Web.App_Start
 {
@@ -30,13 +26,13 @@ namespace Store.Web.App_Start
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
 
             // Repositories
-            builder.RegisterAssemblyTypes(typeof(GadgetRepository).Assembly)
+            builder.RegisterAssemblyTypes(typeof (GadgetRepository).Assembly)
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces().InstancePerRequest();
             // Services
-            builder.RegisterAssemblyTypes(typeof(GadgetService).Assembly)
-               .Where(t => t.Name.EndsWith("Service"))
-               .AsImplementedInterfaces().InstancePerRequest();
+            builder.RegisterAssemblyTypes(typeof (GadgetService).Assembly)
+                .Where(t => t.Name.EndsWith("Service"))
+                .AsImplementedInterfaces().InstancePerRequest();
 
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

@@ -1,17 +1,14 @@
-﻿using Store.Data.Configuration;
+﻿using System.Data.Entity;
+using Store.Data.Configuration;
 using Store.Model;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Data
 {
     public class StoreEntities : DbContext
     {
-        public StoreEntities() : base("StoreEntities") { }
+        public StoreEntities() : base("StoreEntities")
+        {
+        }
 
         public DbSet<Gadget> Gadgets { get; set; }
         public DbSet<Category> Categories { get; set; }

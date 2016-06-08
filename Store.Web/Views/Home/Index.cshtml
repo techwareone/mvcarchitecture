@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Store.Web.ViewModels.CategoryViewModel>
+﻿@using Store.Web.ViewModels
+@model IEnumerable<Store.Web.ViewModels.CategoryViewModel>
 
 @{
     ViewBag.Title = "Store";
@@ -11,26 +12,26 @@
 <div class="container">
     <div class="jumbotron">
 
-        @foreach (var item in Model)
+        @foreach (CategoryViewModel item in Model)
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
                     @*@Html.DisplayFor(modelItem => item.Name)*@
-                    @Html.ActionLink("View all " + item.Name, "Index", new { category = item.Name }, new { @class = "pull-right" })
-                    @using (Html.BeginForm("Filter", "Home", new { category = item.Name }, FormMethod.Post, new { @class = "navbar-form" }))
+                    @Html.ActionLink("View all " + item.Name, "Index", new {category = item.Name}, new {@class = "pull-right"})
+                    @using (Html.BeginForm("Filter", "Home", new {category = item.Name}, FormMethod.Post, new {@class = "navbar-form"}))
                     {
-                        @Html.TextBox("gadgetName", null, new { @class = "form-control", placeholder = "Search in " + item.Name })
+                        @Html.TextBox("gadgetName", null, new {@class = "form-control", placeholder = "Search in " + item.Name})
                     }
 
 
                 </div>
-                @foreach (var gadget in item.Gadgets)
+                @foreach (GadgetViewModel gadget in item.Gadgets)
                 {
                     @Html.Partial("Gadget", gadget)
                 }
                 <div class="panel-footer">
                     @using (Html.BeginForm("Create", "Home", FormMethod.Post,
-                            new { enctype = "multipart/form-data", @class = "form-inline" }))
+                        new {enctype = "multipart/form-data", @class = "form-inline"}))
                     {
                         @Html.Hidden("GadgetCategory", item.CategoryID)
                         <div class="form-group">

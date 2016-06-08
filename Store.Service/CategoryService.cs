@@ -1,11 +1,8 @@
-﻿using Store.Data.Infrastructure;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Store.Data.Infrastructure;
 using Store.Data.Repositories;
 using Store.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Store.Service
 {
@@ -36,19 +33,18 @@ namespace Store.Service
         {
             if (string.IsNullOrEmpty(name))
                 return categorysRepository.GetAll();
-            else
-                return categorysRepository.GetAll().Where(c => c.Name == name);
+            return categorysRepository.GetAll().Where(c => c.Name == name);
         }
 
         public Category GetCategory(int id)
         {
-            var category = categorysRepository.GetById(id);
+            Category category = categorysRepository.GetById(id);
             return category;
         }
 
         public Category GetCategory(string name)
         {
-            var category = categorysRepository.GetCategoryByName(name);
+            Category category = categorysRepository.GetCategoryByName(name);
             return category;
         }
 

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Store.Web.ViewModels.GadgetViewModel>
+﻿@using Store.Web.ViewModels
+@model IEnumerable<Store.Web.ViewModels.GadgetViewModel>
 
 @{
     ViewBag.Title = "Filter";
@@ -8,7 +9,7 @@
 <div class="container">
     <div class="jumbotron">
 
-        @foreach (var item in Model)
+        @foreach (GadgetViewModel item in Model)
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
