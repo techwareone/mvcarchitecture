@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Model", "Store.Model\Store.Model.csproj", "{9388DC18-B02E-4CE2-8211-A958B7DD2DF2}"
 EndProject
@@ -16,6 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A7C07E
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B723FCB2-9144-4EAF-A433-4D4DCDBEF33F}"
+	ProjectSection(SolutionItems) = preProject
+		Blog entry of this project.pdf = Blog entry of this project.pdf
+		Blog entry of this project.url = Blog entry of this project.url
+		GitHub repo of this project.url = GitHub repo of this project.url
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

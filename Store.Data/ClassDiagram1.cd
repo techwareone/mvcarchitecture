@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Store.Data.Infrastructure.DbFactory">
+    <Position X="11" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Infrastructure\DbFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.Infrastructure.Disposable">
+    <Position X="13.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Disposable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.Infrastructure.RepositoryBase&lt;T&gt;">
+    <Position X="3.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAgAABgAAAAAAEAAAEAAAAACgAAAIAAAIA=</HashCode>
+      <FileName>Infrastructure\RepositoryBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store.Data.Infrastructure.UnitOfWork" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <AssociationLine Name="DbContext" Type="Store.Data.StoreEntities">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.463" Y="0.633" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DbContext" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.Configuration.CategoryConfiguration">
+    <Position X="7.25" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\CategoryConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store.Data.Configuration.GadgetConfiguration">
+    <Position X="7.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\GadgetConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store.Data.Repositories.CategoryRepository">
+    <Position X="2.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\CategoryRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.Repositories.GadgetRepository">
+    <Position X="4.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\GadgetRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Data.StoreEntities">
+    <Position X="9.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAIAAAAAAAEAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StoreEntities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store.Data.StoreSeedData">
+    <Position X="12" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAACAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StoreSeedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Store.Data.Infrastructure.IDbFactory">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Infrastructure\IDbFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Data.Infrastructure.IRepository&lt;T&gt;">
+    <Position X="3.75" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAgAABAAAAAAAAAAAEAAAAAAgAAAAAAAIA=</HashCode>
+      <FileName>Infrastructure\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Data.Infrastructure.IUnitOfWork">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Data.Repositories.ICategoryRepository">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <InheritanceLine Type="Store.Data.Infrastructure.IRepository&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="4.625" Y="7" />
+        <Point X="4.625" Y="6.763" />
+        <Point X="1.375" Y="6.763" />
+        <Point X="1.375" Y="6.233" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\CategoryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Data.Repositories.IGadgetRepository">
+    <Position X="6.75" Y="5" Width="1.75" />
+    <InheritanceLine Type="Store.Data.Infrastructure.IRepository&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="4.625" Y="7" />
+        <Point X="4.625" Y="6.763" />
+        <Point X="7.625" Y="6.763" />
+        <Point X="7.625" Y="5.997" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\GadgetRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

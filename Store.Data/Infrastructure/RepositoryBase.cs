@@ -48,8 +48,8 @@ namespace Store.Data.Infrastructure
 
         public virtual void Delete(Expression<Func<T, bool>> where)
         {
-            IEnumerable<T> objects = dbSet.Where(where).AsEnumerable();
-            foreach (T obj in objects)
+            var objects = dbSet.Where(where).AsEnumerable();
+            foreach (var obj in objects)
                 dbSet.Remove(obj);
         }
 

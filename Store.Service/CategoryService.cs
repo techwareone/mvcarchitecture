@@ -38,13 +38,13 @@ namespace Store.Service
 
         public Category GetCategory(int id)
         {
-            Category category = categorysRepository.GetById(id);
+            var category = categorysRepository.GetById(id);
             return category;
         }
 
         public Category GetCategory(string name)
         {
-            Category category = categorysRepository.GetCategoryByName(name);
+            var category = categorysRepository.GetCategoryByName(name);
             return category;
         }
 

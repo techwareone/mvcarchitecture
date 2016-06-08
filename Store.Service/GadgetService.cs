@@ -34,19 +34,19 @@ namespace Store.Service
 
         public IEnumerable<Gadget> GetGadgets()
         {
-            IEnumerable<Gadget> gadgets = gadgetsRepository.GetAll();
+            var gadgets = gadgetsRepository.GetAll();
             return gadgets;
         }
 
         public IEnumerable<Gadget> GetCategoryGadgets(string categoryName, string gadgetName = null)
         {
-            Category category = categoryRepository.GetCategoryByName(categoryName);
+            var category = categoryRepository.GetCategoryByName(categoryName);
             return category.Gadgets.Where(g => g.Name.ToLower().Contains(gadgetName.ToLower().Trim()));
         }
 
         public Gadget GetGadget(int id)
         {
-            Gadget gadget = gadgetsRepository.GetById(id);
+            var gadget = gadgetsRepository.GetById(id);
             return gadget;
         }
 

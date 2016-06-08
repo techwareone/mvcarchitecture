@@ -4,6 +4,8 @@ using Store.Model;
 
 namespace Store.Data
 {
+    // More entity framework voodoo: https://msdn.microsoft.com/en-us/library/gg679604(v=vs.113).aspx
+    // http://www.entityframeworktutorial.net/code-first/database-initialization-strategy-in-code-first.aspx
     public class StoreSeedData : DropCreateDatabaseIfModelChanges<StoreEntities>
     {
         protected override void Seed(StoreEntities context)
@@ -13,6 +15,8 @@ namespace Store.Data
 
             context.Commit();
         }
+
+        #region Seed data source methods...
 
         private static List<Category> GetCategories()
         {
@@ -167,5 +171,7 @@ namespace Store.Data
                 }
             };
         }
+
+        #endregion
     }
 }

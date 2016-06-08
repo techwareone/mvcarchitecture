@@ -165,6 +165,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Gadget.cshtml" />
     <Content Include="Views\Home\Filter.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

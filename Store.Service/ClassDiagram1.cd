@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Store.Service.CategoryService" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAACAAQAAgAABAAABAAAAAAA=</HashCode>
+      <FileName>CategoryService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Store.Service.GadgetService" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAIAACAAAAAAAgAAAACADAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GadgetService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Store.Service.ICategoryService">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAQAAgAABAAAAAAAAAAA=</HashCode>
+      <FileName>CategoryService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Store.Service.IGadgetService">
+    <Position X="4.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAACAAAAAAAgAAAACAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GadgetService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

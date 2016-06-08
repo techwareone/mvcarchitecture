@@ -12,7 +12,7 @@
 <div class="container">
     <div class="jumbotron">
 
-        @foreach (CategoryViewModel item in Model)
+        @foreach (var item in Model)
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -25,7 +25,7 @@
 
 
                 </div>
-                @foreach (GadgetViewModel gadget in item.Gadgets)
+                @foreach (var gadget in item.Gadgets)
                 {
                     @Html.Partial("Gadget", gadget)
                 }

@@ -23,23 +23,15 @@ namespace Store.Web.Controllers
         // GET: Home
         public ActionResult Index(string category = null)
         {
-            IEnumerable<CategoryViewModel> viewModelGadgets;
-            IEnumerable<Category> categories;
-
-            categories = categoryService.GetCategories(category).ToList();
-
-            viewModelGadgets = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
+            IEnumerable<Category> categories = categoryService.GetCategories(category).ToList();
+            var viewModelGadgets = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(categories);
             return View(viewModelGadgets);
         }
 
         public ActionResult Filter(string category, string gadgetName)
         {
-            IEnumerable<GadgetViewModel> viewModelGadgets;
-            IEnumerable<Gadget> gadgets;
-
-            gadgets = gadgetService.GetCategoryGadgets(category, gadgetName);
-
-            viewModelGadgets = Mapper.Map<IEnumerable<Gadget>, IEnumerable<GadgetViewModel>>(gadgets);
+            var gadgets = gadgetService.GetCategoryGadgets(category, gadgetName);
+            var viewModelGadgets = Mapper.Map<IEnumerable<Gadget>, IEnumerable<GadgetViewModel>>(gadgets);
 
             return View(viewModelGadgets);
         }
@@ -49,17 +41,17 @@ namespace Store.Web.Controllers
         {
             if (newGadget != null && newGadget.File != null)
             {
-                Gadget gadget = Mapper.Map<GadgetFormViewModel, Gadget>(newGadget);
+                var gadget = Mapper.Map<GadgetFormViewModel, Gadget>(newGadget);
                 gadgetService.CreateGadget(gadget);
 
-                string gadgetPicture = Path.GetFileName(newGadget.File.FileName);
-                string path = Path.Combine(Server.MapPath("~/images/"), gadgetPicture);
+                var gadgetPicture = Path.GetFileName(newGadget.File.FileName);
+                var path = Path.Combine(Server.MapPath("~/images/"), gadgetPicture);
                 newGadget.File.SaveAs(path);
 
                 gadgetService.SaveGadget();
             }
 
-            Category category = categoryService.GetCategory(newGadget.GadgetCategory);
+            var category = categoryService.GetCategory(newGadget.GadgetCategory);
             return RedirectToAction("Index", new {category = category.Name});
         }
     }

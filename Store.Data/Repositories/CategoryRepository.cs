@@ -14,8 +14,7 @@ namespace Store.Data.Repositories
 
         public Category GetCategoryByName(string categoryName)
         {
-            Category category = DbContext.Categories.Where(c => c.Name == categoryName).FirstOrDefault();
-
+            var category = DbContext.Categories.FirstOrDefault(c => c.Name == categoryName);
             return category;
         }
 
